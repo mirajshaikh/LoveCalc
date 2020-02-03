@@ -18,13 +18,15 @@ $(document).ready(function () {
 					console.log(response.result);
 					var backcolor  = (response.percentage);
 					console.log(backcolor);	
-					if(backcolor > 40){
+					if(backcolor <= 20){
 						$("body").css("background-color", "pink");
-					  } else if(backcolor >= 6 && backcolor <= 40){
+					  } else if(backcolor >= 21 && backcolor <= 40){
 						$("body").css("background-color", "blue");
-					  } else if(backcolor > 9){
+					  } else if(backcolor >= 41 && backcolor <= 70){
+						$("body").css("background-color", "lightpink");
+					  } else if(backcolor >= 71 && backcolor <= 100){
 						$("body").css("background-color", "pink");
-					  } 				 
+					  }				 
 				})
 				};
 		
