@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="assets/jquery.min.js"></script>
    <script src="assets/script.js"></script>
-   <script src="assets/loading-bar.min.css"></script>
-   <script src="assets/loading-bar.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="loading-bar.css"/>
+   <script type="text/javascript" src="loading-bar.js"></script>
     <title>Calculator</title>
 </head>
 <body>
@@ -15,5 +15,22 @@
     <input id="name1" type="text">
     <input id="name2"type="text">
     <button id="calc"> Calculate </button>
+<div
+  data-type="fill"
+  data-path="
+  M90.5,23.2c0-12.5-10.2-22.7-22.7-22.7
+  c-13.6,0-20.9,8.6-22.3,13.8C44.3,8.9,
+  35.1,0.5,23.2,0.5C10.7,0.5,0.5,10.7,
+  0.5,23.2c0,22.2,36.5,45.3,45,55.9
+  C53.5,67.3,90.5,46.3,90.5,23.2z"
+  class="ldBar"
+  data-value="70"
+  data-fill="data:ldbar/res,bubble(#fcbeb4,#fff,30,1)">
+</div>
+<style>
+.ldBar{
+    height: 80px;
+}
+</style>
 </body>
 </html>
