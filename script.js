@@ -4,7 +4,7 @@ var name2 = ("shaikh")
 var settings = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://love-calculator.p.rapidapi.com/getPercentage?fname=" + name1 + "&sname="+ name2,
+	"url": "https://love-calculator.p.rapidapi.com/getPercentage?fname=miraj&sname=Alice",
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "love-calculator.p.rapidapi.com",
