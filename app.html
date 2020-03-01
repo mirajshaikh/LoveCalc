@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="loading-bar.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://jquery-cdn.netlify.com/jquery-3.4.1.js"></script>
+    <script src="index.js"></script>
+    <script src="loading-bar.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <h1>Love Calculator</h1>
+            <form action=javascript:calculateLove()>
+                <input minlength="1" id="firstname" type="text" placeholder="First Person's Name" required>
+                <input minlength="1" id="secondname" type="text" placeholder="Secound Person's Name" required>
+                <button type="submit" id="button1" value=""> 💖 Calculate</button>
+            </form>
+        </div>
+
+        <div class="output">
+            <div class="myBar label-center" style="width:230px; height:230px;margin: auto; margin-top: 30px;"></div>
+            <h1 id="quotes"></h1>
+        </div>
+    </div>
+    <script>
+        function calculateLove() {
+            Fname = document.getElementById("firstname").value.toUpperCase();
+
+            FnameLength = Fname.length;
+
+            Sname = document.getElementById("secondname").value.toUpperCase();
+
+            SnameLength = Sname.length;
+
+            var lovecount = 0;
+
+            for (var i = 0; i < FnameLength; i++) {
+                var L1 = Fname.substring(i, i + 1);
+
+                if (L1 == "A") lovecount += 3;
+
+                if (L1 == "E") lovecount += 3;
+
+                if (L1 == "I") lovecount += 3;
+
+                if (L1 == "O") lovecount += 3;
+
+                if (L1 == "U") lovecount += 4;
+
+                if (L1 == "L") lovecount += 1;
+
+                if (L1 == "V") lovecount += 4;
+            }
+
+            for (var count = 0; count < SnameLength; count++) {
+                var L2 = Sname.substring(count, count + 1);
+
+                if (L2 == "A") lovecount += 3;
+
+                if (L2 == "E") lovecount += 3;
+
+                if (L2 == "I") lovecount += 3;
+
+                if (L2 == "L") lovecount += 3;
+
+                if (L2 == "O") lovecount += 4;
+
+                if (L2 == "V") lovecount += 1;
+
+                if (L2 == "E") lovecount += 4;
+            }
+
+            var Total = 0;
+
+            if (lovecount > 0) Total = 5 - (FnameLength + SnameLength) / 2;
+
+            if (lovecount > 2) Total = 10 - (FnameLength + SnameLength) / 2;
+
+            if (lovecount > 4) Total = 20 - (FnameLength + SnameLength) / 2;
+
+            if (lovecount > 6) Total = 30 - (FnameLength + SnameLength) / 2;
+
+            if (lovecount > 8) Total = 40 - (FnameLength + SnameLength) / 2;
+
+            if (lovecount > 10) Total = 50 - (FnameLength + SnameLength) / 2;
+
+            if (lovecount > 12) Total = 60 - (FnameLength + SnameLength) / 2;
+
+            if (lovecount > 14) Total = 70 - (FnameLength + SnameLength) / 2;
+
+            if (lovecount > 16) Total = 80 - (FnameLength + SnameLength) / 2;
+
+            if (lovecount > 18) Total = 90 - (FnameLength + SnameLength) / 2;
+
+            if (lovecount > 20) Total = 100 - (FnameLength + SnameLength) / 2;
+
+            if (lovecount > 22) Total = 110 - (FnameLength + SnameLength) / 2;
+
+            if (FnameLength == 0 || SnameLength == 0) Total = "Error";
+
+            if (Total < 0) Total = 0;
+
+            if (Total > 99) Total = 100;
+
+            var result = Math.floor(Total);
+
+            //  alert("Toatal" + Math.floor(Total));
+            $("#result").text(result)
+            if (result >= 0 && result <= 15) {
+                quote = "Soo Sad booooo"
+            }
+            if (result >= 16 && result <= 40) {
+                quote = "Nice But can find someone better"
+            }
+            if (result >= 41 && result <= 70) {
+                quote = "Average Love"
+            }
+            if (result >= 71 && result <= 90) {
+                quote = "Really Nice RelationShip"
+            }
+            if (result > 90) {
+                quote = "Strongest Love Ever Exist"
+            }
+
+            $('#quotes').text(quote)
+
+
+            // console.log(quote);
+            bar.set(result);
+
+        }
+        var bar = new ldBar(".myBar", {
+            "preset": "bubble",
+            "path": 'M90.5,23.2c0-12.5-10.2-22.7-22.7-22.7c-13.6,0-20.9,8.6-22.3,13.8C44.3,8.9,35.1,0.5,23.2,0.5C10.7,0.5,0.5,10.7, 0.5,23.2c0,22.2,36.5,45.3,45,55.9 C53.5,67.3,90.5,46.3,90.5,23.2z',
+            "value": 0,
+            "fill": 'data:ldbar/res,bubble(pink,red)',
+            "pattern-size": 100,
+            "bbox": "3 5 85 80"
+        });
+    </script>
+</body>
+
+</html>
